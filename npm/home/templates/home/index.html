@@ -1,0 +1,79 @@
+{% extends "home\basic.html" %}
+
+{% block title %}
+HOME PAGE
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block body %}
+
+{% if messages %}
+<ul class="messages list-unstyled">
+    {% for message in messages %}
+    <li {% if message.tags %}>
+
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong> {{ message }} </strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+{% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<main role="main">
+
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="text-align: center">
+    <br/>
+      <div class="container" >
+        <h1 class="display-3"  > FRONTPAGE FREEBIRDS PROJECT SUBMISSION!!
+
+          {% if user.is_authenticated  %}
+        Welcome {{request.user.last_name}}
+          {% endif %}
+
+        </h1>
+        <p> The main Motive of Frontpage freebirds is to see the capability of the student, and to improve the project Management skills of the student and majar Motive is To Enhance the student knowledge. We are looking Forward to start More such initials</p>
+   
+      </div>
+    </div>
+</br>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Steps for a Successful project</h2>
+          <p>1. Being Agile 2. Do Not Nitpick 3. Be Update With Your Project Management Practices 4. Being committed to work 5. Proper Planning 6. Transparency Principle 7. Visualization and Communication in all Project Deliverables and Activities 8. Healthy Risk Management 9. Never Forget 3-Factors: Time, Budget, and Quality 10. Culture Principle of project. </p>
+          <p><a class="btn btn-success" href="#" role="button">Know More</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>What Actually Project Management means?</h2>
+          <p>The objective of project management is to produce a complete project which complies with the client's objectives. In many cases the objective of project management is also to shape or reform the client's brief to feasibly address the client's objectives. Once the client's objectives are clearly established they should influence all decisions made by other people involved in the project – for example project managers, designers, contractors and sub-contractors. Ill-defined or too tightly prescribed project management objectives are detrimental to decision making.</p>
+          <p><a class="btn btn-success" href="#" role="button">Know More </a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Must requirements!!!</h2>
+          <p>This should be Must to submit Your project Your Email address Titlr of your project A brief description about your project Your Correct Enrollment number should be Known. The year and class of the student and lastly the github and Live Link of your Project. Your Contribution in this little intial will be Appreciated.You will be remarked according to your Project.The user/student can also edit or delete the Project according to their will.</p>
+          <p><a class="btn btn-success" href="#" role="button">Know More &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+    </div> <!-- /container -->
+
+  </main>
+
+  <footer class="container">
+    <p>&copy; Company 2017-2018</p>
+  </footer>
+
+
+{% endblock body %}
